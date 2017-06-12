@@ -8,7 +8,7 @@
 </head>
 <body>
 <center>
-<h1>普通眼科医生C</h1>
+<h1>普通换药护士A</h1>
 	<hr>
 	<a href="../Guahao01.jsp">返回</a>
 	<div>
@@ -22,15 +22,15 @@
                        border-right-style: solid; border-left-style: solid; height: 380px; border-right-color: aqua;
                        border-bottom-style: solid ">
                        <tr>
-                       	<td style="width: 50%">姓名：普通眼科医生C</td>
+                       	<td style="width: 50%">姓名：普通换药护士A</td>
                         <td style="width: 50%">年龄：40</td>
                        </tr>
                        <tr>
-                         <td style="width: 50%">科室：眼科</td>
-                         <td style="width: 50%">职称：副教授</td>
+                         <td style="width: 50%">科室：换药室</td>
+                         <td style="width: 50%">职称：护士</td>
                        </tr>
                        <tr>
-                         <td style="width: 50% ">擅长领域：夜盲症</td>
+                         <td style="width: 50% ">擅长领域：换药</td>
                          <td style="width: 50%">联系方式：12345678910</td>
                        </tr>
                    </table>

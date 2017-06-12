@@ -33,6 +33,12 @@
 		document.getElementById('doc21').style.display='none';
 		document.getElementById('doc30').style.display='none';
 		document.getElementById('doc31').style.display='none';
+		document.getElementById('doc40').style.display='none';
+		document.getElementById('doc41').style.display='none';
+		document.getElementById('doc50').style.display='none';
+		document.getElementById('doc51').style.display='none';
+		document.getElementById('doc60').style.display='none';
+		document.getElementById('doc61').style.display='none';
 		document.getElementById(d).style.display='block';
 		return d;
 	}
@@ -44,6 +50,9 @@
 	<input type="radio" value="2" name="keshi" onclick="p1()">内科</td>
 	<input type="radio" value="3" name="keshi" onclick="p1()">儿科</td>
 	<input type="radio" value="4" name="keshi" onclick="p1()">眼科</td>
+	<input type="radio" value="5" name="keshi" onclick="p1()">换药室</td>
+	<input type="radio" value="6" name="keshi" onclick="p1()">放射科</td>
+	<input type="radio" value="7" name="keshi" onclick="p1()">口腔科</td>
 	<h3>请选择挂号类型</h3>
 	<input type="radio" value="putong" name="type" checked="checked" onclick="p1()">普通号</td>
 	<input type="radio" value="vip" name="type" onclick="p1()">专家号</td>
@@ -394,7 +403,108 @@
 			%></td></tr>
 		</table>
 	</div>
-	
+	<div id="doc40">
+		<table>
+			<tr>
+				<td>普通换药护士A的队列</td> 
+			</tr>
+			<tr><td><%
+			if(Jiuzhen.queuePHuan.peek() == null)
+			{
+				%><h4>空</h4><%
+			}
+			else{
+				%><%=Jiuzhen.queuePHuan %>
+				<%
+			}
+			%></td></tr>		
+		</table>
+	</div>
+   <div id="doc41">
+		<table>
+			<tr>
+				<td>专家换药护士A的队列</td> 
+			</tr>
+			<tr><td><%
+			if(Jiuzhen.queueVHuan.peek() == null)
+			{
+				%><h4>空</h4><%
+			}
+			else{
+				%><%=Jiuzhen.queueVHuan %>
+				<%
+			}
+			%></td></tr>
+		</table>
+	</div>
+	<div id="doc50">
+		<table>
+			<tr>
+				<td>普通放射科医生A的队列</td> 
+			</tr>
+			<tr><td><%
+			if(Jiuzhen.queuePFang.peek() == null)
+			{
+				%><h4>空</h4><%
+			}
+			else{
+				%><%=Jiuzhen.queuePFang %>
+				<%
+			}
+			%></td></tr>		
+		</table>
+	</div>
+   <div id="doc51">
+		<table>
+			<tr>
+				<td>专家放射科医生A的队列</td> 
+			</tr>
+			<tr><td><%
+			if(Jiuzhen.queueVFang.peek() == null)
+			{
+				%><h4>空</h4><%
+			}
+			else{
+				%><%=Jiuzhen.queueVFang %>
+				<%
+			}
+			%></td></tr>
+		</table>
+	</div>
+	<div id="doc60">
+		<table>
+			<tr>
+				<td>普通口腔医生A的队列</td> 
+			</tr>
+			<tr><td><%
+			if(Jiuzhen.queuePKou.peek() == null)
+			{
+				%><h4>空</h4><%
+			}
+			else{
+				%><%=Jiuzhen.queuePKou %>
+				<%
+			}
+			%></td></tr>		
+		</table>
+	</div>
+   <div id="doc61">
+		<table>
+			<tr>
+				<td>专家口腔科医生A的队列</td> 
+			</tr>
+			<tr><td><%
+			if(Jiuzhen.queueVKou.peek() == null)
+			{
+				%><h4>空</h4><%
+			}
+			else{
+				%><%=Jiuzhen.queueVKou %>
+				<%
+			}
+			%></td></tr>
+		</table>
+	</div>
 </center>
 
 </body>

@@ -70,14 +70,14 @@ public class servlet extends HttpServlet {
 		//访问人数
 		int num1=Integer.parseInt(getServletContext().getAttribute("number").toString());
 		String num = "";
-		if(num1 > 0 && num1 < 9)
+		if(num1 > 0 && num1 < 10)
   		  num = "00"+num1;
 		else if(num1 >= 10 && num1 <= 99)
   		  num="0"+num1;
 		String number = ""+numbe+num;
 		//获取时间
 		Date date1 = new Date();
-		String date = new SimpleDateFormat("yyyy-MM-dd,hh:mm:ss").format(date1);
+		String date = new SimpleDateFormat("yyyy-MM-dd,HH:mm:ss").format(date1);
 		Jiuzhen j[] = Jiuzhen.readDataGua2();//读取文件
 		Jiuzhen d[] = new Jiuzhen[j.length+1];
 		for(int i=0;i<j.length;i++)
@@ -123,6 +123,30 @@ public class servlet extends HttpServlet {
 		else if(a == 4 && type.equals("putong"))
 		{
 			doctor = (String)request.getParameter("doc30");
+		}
+		else if(a == 5 && type.equals("vip"))
+		{
+			doctor = (String)request.getParameter("doc41");		
+		}
+		else if(a == 5 && type.equals("putong"))
+		{
+			doctor = (String)request.getParameter("doc40");
+		}
+		else if(a == 6 && type.equals("vip"))
+		{
+			doctor = (String)request.getParameter("doc51");		
+		}
+		else if(a == 6 && type.equals("putong"))
+		{
+			doctor = (String)request.getParameter("doc50");
+		}
+		else if(a == 7 && type.equals("vip"))
+		{
+			doctor = (String)request.getParameter("doc61");		
+		}
+		else if(a == 7 && type.equals("putong"))
+		{
+			doctor = (String)request.getParameter("doc60");
 		}
 		switch(doctor)
 		{
@@ -398,6 +422,72 @@ public class servlet extends HttpServlet {
 			d[j.length] = new Jiuzhen(number,"眼科","专家眼科医生C",date);
 			Jiuzhen.writeDataGua2(d);
 			Display(request,response,Jiuzhen.queueVYanC);
+			}else{
+				out.println("<h1 align='center'>队列已满</h1>");
+			}
+			break;
+		case "pdocHuanA":
+			Jiuzhen.num25 +=1;		
+			if(Jiuzhen.num25 < 11){
+			Jiuzhen.queuePHuan.offer(number);
+			d[j.length] = new Jiuzhen(number,"换药室","普通换药护士A",date);
+			Jiuzhen.writeDataGua2(d);
+			Display(request,response,Jiuzhen.queuePHuan);
+			}else{
+				out.println("<h1 align='center'>队列已满</h1>");
+			}
+			break;
+		case "vdocHuanA":
+			Jiuzhen.num26 +=1;		
+			if(Jiuzhen.num26 < 11){
+			Jiuzhen.queueVHuan.offer(number);
+			d[j.length] = new Jiuzhen(number,"换药室","专家换药护士A",date);
+			Jiuzhen.writeDataGua2(d);
+			Display(request,response,Jiuzhen.queuePHuan);
+			}else{
+				out.println("<h1 align='center'>队列已满</h1>");
+			}
+			break;	
+		case "pdocFangA":
+			Jiuzhen.num27 +=1;		
+			if(Jiuzhen.num27 < 11){
+			Jiuzhen.queuePFang.offer(number);
+			d[j.length] = new Jiuzhen(number,"放射科","普通放射科医生A",date);
+			Jiuzhen.writeDataGua2(d);
+			Display(request,response,Jiuzhen.queuePFang);
+			}else{
+				out.println("<h1 align='center'>队列已满</h1>");
+			}
+			break;
+		case "vdocFangA":
+			Jiuzhen.num28 +=1;		
+			if(Jiuzhen.num28 < 11){
+			Jiuzhen.queueVFang.offer(number);
+			d[j.length] = new Jiuzhen(number,"放射科","专家放射科医生A",date);
+			Jiuzhen.writeDataGua2(d);
+			Display(request,response,Jiuzhen.queueVFang);
+			}else{
+				out.println("<h1 align='center'>队列已满</h1>");
+			}
+			break;
+		case "pdocKouA":
+			Jiuzhen.num29 +=1;		
+			if(Jiuzhen.num29 < 11){
+			Jiuzhen.queuePKou.offer(number);
+			d[j.length] = new Jiuzhen(number,"口腔科","普通口腔科医生A",date);
+			Jiuzhen.writeDataGua2(d);
+			Display(request,response,Jiuzhen.queuePKou);
+			}else{
+				out.println("<h1 align='center'>队列已满</h1>");
+			}
+			break;
+		case "vdocKouA":
+			Jiuzhen.num28 +=1;		
+			if(Jiuzhen.num28 < 11){
+			Jiuzhen.queueVKou.offer(number);
+			d[j.length] = new Jiuzhen(number,"口腔科","专家口腔科医生A",date);
+			Jiuzhen.writeDataGua2(d);
+			Display(request,response,Jiuzhen.queueVKou);
 			}else{
 				out.println("<h1 align='center'>队列已满</h1>");
 			}

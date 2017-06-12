@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<center>
 <h1>普通眼科医生B</h1>
 	<hr>
 	<a href="../Guahao01.jsp">返回</a>

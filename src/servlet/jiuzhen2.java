@@ -65,7 +65,7 @@ public class jiuzhen2 extends HttpServlet {
 		String a = (String)request.getParameter("jiuzhen");
 		//获取时间
 		Date date1 = new Date();
-		String date = new SimpleDateFormat("yyyy-MM-dd,hh:mm:ss").format(date1);
+		String date = new SimpleDateFormat("yyyy-MM-dd,HH:mm:ss").format(date1);
 		String arrive = (String)request.getParameter("arrive"); //病人是否到达
 		System.out.println(arrive);
 		Jiuzhen j[] = Jiuzhen.readData2();	
@@ -87,7 +87,7 @@ public class jiuzhen2 extends HttpServlet {
 					if(Jiuzhen.queuePWaiA.peek() == null)
 					{
 						out.print("<center>");
-						out.print("<h1>队列为空！</h1>");
+						out.print("<h1>队列为空,无人就诊！</h1>");
 						out.print("<center>");
 					}
 					else{
@@ -102,7 +102,7 @@ public class jiuzhen2 extends HttpServlet {
 					if(Jiuzhen.queuePWaiB.peek() == null)
 					{
 						out.print("<center>");
-						out.print("<h1>队列为空！</h1>");
+						out.print("<h1>队列为空,无人就诊！</h1>");
 						out.print("<center>");
 					}
 					else{
@@ -117,7 +117,7 @@ public class jiuzhen2 extends HttpServlet {
 					if(Jiuzhen.queuePWaiC.peek() == null)
 					{
 						out.print("<center>");
-						out.print("<h1>队列为空！</h1>");
+						out.print("<h1>队列为空,无人就诊！</h1>");
 						out.print("<center>");
 					}
 					else{
@@ -132,7 +132,7 @@ public class jiuzhen2 extends HttpServlet {
 					if(Jiuzhen.queueVWaiA.peek() == null)
 					{
 						out.print("<center>");
-						out.print("<h1>队列为空！</h1>");
+						out.print("<h1>队列为空,无人就诊！</h1>");
 						out.print("<center>");
 					}
 					else{
@@ -147,7 +147,7 @@ public class jiuzhen2 extends HttpServlet {
 					if(Jiuzhen.queueVWaiB.peek() == null)
 					{
 						out.print("<center>");
-						out.print("<h1>队列为空！</h1>");
+						out.print("<h1>队列为空,无人就诊！</h1>");
 						out.print("<center>");
 					}
 					else{
@@ -162,7 +162,7 @@ public class jiuzhen2 extends HttpServlet {
 					if(Jiuzhen.queueVWaiC.peek() == null)
 					{
 						out.print("<center>");
-						out.print("<h1>队列为空！</h1>");
+						out.print("<h1>队列为空,无人就诊！</h1>");
 						out.print("<center>");
 					}
 					else{
@@ -185,7 +185,7 @@ public class jiuzhen2 extends HttpServlet {
 					if(Jiuzhen.queuePNeiA.peek() == null)
 					{
 						out.print("<center>");
-						out.print("<h1>队列为空！</h1>");
+						out.print("<h1>队列为空,无人就诊！</h1>");
 						out.print("<center>");
 					}
 					else{
@@ -200,7 +200,7 @@ public class jiuzhen2 extends HttpServlet {
 					if(Jiuzhen.queuePNeiB.peek() == null)
 					{
 						out.print("<center>");
-						out.print("<h1>队列为空！</h1>");
+						out.print("<h1>队列为空,无人就诊！</h1>");
 						out.print("<center>");
 					}
 					else{
@@ -215,7 +215,7 @@ public class jiuzhen2 extends HttpServlet {
 					if(Jiuzhen.queuePNeiC.peek() == null)
 					{
 						out.print("<center>");
-						out.print("<h1>队列为空！</h1>");
+						out.print("<h1>队列为空,无人就诊！</h1>");
 						out.print("<center>");
 					}
 					else{
@@ -230,7 +230,7 @@ public class jiuzhen2 extends HttpServlet {
 					if(Jiuzhen.queueVNeiA.peek() == null)
 					{
 						out.print("<center>");
-						out.print("<h1>队列为空！</h1>");
+						out.print("<h1>队列为空,无人就诊！</h1>");
 						out.print("<center>");
 					}
 					else{
@@ -245,7 +245,7 @@ public class jiuzhen2 extends HttpServlet {
 					if(Jiuzhen.queueVNeiB.peek() == null)
 					{
 						out.print("<center>");
-						out.print("<h1>队列为空！</h1>");
+						out.print("<h1>队列为空,无人就诊！</h1>");
 						out.print("<center>");
 					}
 					else{
@@ -260,7 +260,7 @@ public class jiuzhen2 extends HttpServlet {
 					if(Jiuzhen.queueVNeiC.peek() == null)
 					{
 						out.print("<center>");
-						out.print("<h1>队列为空！</h1>");
+						out.print("<h1>队列为空,无人就诊！</h1>");
 						out.print("<center>");
 					}
 					else{
@@ -283,7 +283,7 @@ public class jiuzhen2 extends HttpServlet {
 					if(Jiuzhen.queuePErA.peek() == null)
 					{
 						out.print("<center>");
-						out.print("<h1>队列为空！</h1>");
+						out.print("<h1>队列为空,无人就诊！</h1>");
 						out.print("<center>");
 					}
 					else{
@@ -298,7 +298,7 @@ public class jiuzhen2 extends HttpServlet {
 					if(Jiuzhen.queuePErB.peek() == null)
 					{
 						out.print("<center>");
-						out.print("<h1>队列为空！</h1>");
+						out.print("<h1>队列为空,无人就诊！</h1>");
 						out.print("<center>");
 					}
 					else{
@@ -313,7 +313,7 @@ public class jiuzhen2 extends HttpServlet {
 					if(Jiuzhen.queuePErC.peek() == null)
 					{
 						out.print("<center>");
-						out.print("<h1>队列为空！</h1>");
+						out.print("<h1>队列为空,无人就诊！</h1>");
 						out.print("<center>");
 					}
 					else{
@@ -328,7 +328,7 @@ public class jiuzhen2 extends HttpServlet {
 					if(Jiuzhen.queueVErA.peek() == null)
 					{
 						out.print("<center>");
-						out.print("<h1>队列为空！</h1>");
+						out.print("<h1>队列为空,无人就诊！</h1>");
 						out.print("<center>");
 					}
 					else{
@@ -343,7 +343,7 @@ public class jiuzhen2 extends HttpServlet {
 					if(Jiuzhen.queueVErB.peek() == null)
 					{
 						out.print("<center>");
-						out.print("<h1>队列为空！</h1>");
+						out.print("<h1>队列为空,无人就诊！</h1>");
 						out.print("<center>");
 					}
 					else{
@@ -358,7 +358,7 @@ public class jiuzhen2 extends HttpServlet {
 					if(Jiuzhen.queueVErC.peek() == null)
 					{
 						out.print("<center>");
-						out.print("<h1>队列为空！</h1>");
+						out.print("<h1>队列为空,无人就诊！</h1>");
 						out.print("<center>");
 					}
 					else{
@@ -381,7 +381,7 @@ public class jiuzhen2 extends HttpServlet {
 					if(Jiuzhen.queuePYanA.peek() == null)
 					{
 						out.print("<center>");
-						out.print("<h1>队列为空！</h1>");
+						out.print("<h1>队列为空,无人就诊！</h1>");
 						out.print("<center>");
 					}
 					else{
@@ -396,7 +396,7 @@ public class jiuzhen2 extends HttpServlet {
 					if(Jiuzhen.queuePYanB.peek() == null)
 					{
 						out.print("<center>");
-						out.print("<h1>队列为空！</h1>");
+						out.print("<h1>队列为空,无人就诊！</h1>");
 						out.print("<center>");
 					}
 					else{
@@ -411,7 +411,7 @@ public class jiuzhen2 extends HttpServlet {
 					if(Jiuzhen.queuePYanC.peek() == null)
 					{
 						out.print("<center>");
-						out.print("<h1>队列为空！</h1>");
+						out.print("<h1>队列为空,无人就诊！</h1>");
 						out.print("<center>");
 					}
 					else{
@@ -426,7 +426,7 @@ public class jiuzhen2 extends HttpServlet {
 					if(Jiuzhen.queueVYanA.peek() == null)
 					{
 						out.print("<center>");
-						out.print("<h1>队列为空！</h1>");
+						out.print("<h1>队列为空,无人就诊！</h1>");
 						out.print("<center>");
 					}
 					else{
@@ -441,7 +441,7 @@ public class jiuzhen2 extends HttpServlet {
 					if(Jiuzhen.queueVYanB.peek() == null)
 					{
 						out.print("<center>");
-						out.print("<h1>队列为空！</h1>");
+						out.print("<h1>队列为空,无人就诊！</h1>");
 						out.print("<center>");
 					}
 					else{
@@ -456,7 +456,7 @@ public class jiuzhen2 extends HttpServlet {
 					if(Jiuzhen.queueVYanC.peek() == null)
 					{
 						out.print("<center>");
-						out.print("<h1>队列为空！</h1>");
+						out.print("<h1>队列为空,无人就诊！</h1>");
 						out.print("<center>");
 					}
 					else{
@@ -469,6 +469,120 @@ public class jiuzhen2 extends HttpServlet {
 					break;	
 				}	
 			}
+			break;
+			case "5":
+			{
+				String doc = (String)request.getParameter("Huan");
+				switch(doc)
+				{
+				case "PHuanA":
+					if(Jiuzhen.queuePHuan.peek() == null)
+					{
+						out.print("<center>");
+						out.print("<h1>队列为空,无人就诊！</h1>");
+						out.print("<center>");
+					}
+					else{
+					d[j.length] = new Jiuzhen(Jiuzhen.queuePHuan.peek(),"换药室","普通换药护士A",date,arrive);
+					Jiuzhen.writeData2(d);
+					System.out.println("就诊记录输入文件YanA");
+					Jiuzhen.queuePHuan.poll();
+					display(request,response,Jiuzhen.queuePHuan);
+					}
+					break;
+				case "VHuanA":
+					if(Jiuzhen.queueVHuan.peek() == null)
+					{
+						out.print("<center>");
+						out.print("<h1>队列为空,无人就诊！</h1>");
+						out.print("<center>");
+					}
+					else{
+					d[j.length] = new Jiuzhen(Jiuzhen.queueVHuan.peek(),"换药室","专家换药护士A",date,arrive);
+					Jiuzhen.writeData2(d);
+					System.out.println("就诊记录输入文件YanB");
+					Jiuzhen.queueVHuan.poll();
+					display(request,response,Jiuzhen.queueVHuan);
+					}
+					break;
+				}	
+			}
+			break;
+			case "6":
+			{
+				String doc = (String)request.getParameter("Fang");
+				switch(doc)
+				{
+				case "PFang":
+					if(Jiuzhen.queuePFang.peek() == null)
+					{
+						out.print("<center>");
+						out.print("<h1>队列为空,无人就诊！</h1>");
+						out.print("<center>");
+					}
+					else{
+					d[j.length] = new Jiuzhen(Jiuzhen.queuePFang.peek(),"放射科","普通放射科医生C",date,arrive);
+					Jiuzhen.writeData2(d);
+					System.out.println("就诊记录输入文件YanC");
+					Jiuzhen.queuePFang.poll();
+					display(request,response,Jiuzhen.queuePFang);
+					}
+					break;	
+				case "VFang":
+					if(Jiuzhen.queueVFang.peek() == null)
+					{
+						out.print("<center>");
+						out.print("<h1>队列为空,无人就诊！</h1>");
+						out.print("<center>");
+					}
+					else{
+					d[j.length] = new Jiuzhen(Jiuzhen.queueVFang.peek(),"放射科","专家放射科医生A",date,arrive);
+					Jiuzhen.writeData2(d);
+					System.out.println("就诊记录输入文件YanA");
+					Jiuzhen.queueVFang.poll();
+					display(request,response,Jiuzhen.queueVFang);
+					}
+					break;
+				}	
+			}
+			break;
+			case "7":
+			{
+				String doc = (String)request.getParameter("Kou");
+				switch(doc)
+				{
+				case "PKou":
+					if(Jiuzhen.queuePKou.peek() == null)
+					{
+						out.print("<center>");
+						out.print("<h1>队列为空,无人就诊！</h1>");
+						out.print("<center>");
+					}
+					else{
+					d[j.length] = new Jiuzhen(Jiuzhen.queuePKou.peek(),"口腔科","普通口腔科医生A",date,arrive);
+					Jiuzhen.writeData2(d);
+					System.out.println("就诊记录输入文件YanB");
+					Jiuzhen.queuePKou.poll();
+					display(request,response,Jiuzhen.queuePKou);
+					}
+					break;
+				case "VKou":
+					if(Jiuzhen.queueVKou.peek() == null)
+					{
+						out.print("<center>");
+						out.print("<h1>队列为空,无人就诊！</h1>");
+						out.print("<center>");
+					}
+					else{
+					d[j.length] = new Jiuzhen(Jiuzhen.queueVKou.peek(),"口腔科","专家口腔科医生A",date,arrive);
+					Jiuzhen.writeData2(d);
+					System.out.println("就诊记录输入文件YanC");
+					Jiuzhen.queueVKou.poll();
+					display(request,response,Jiuzhen.queueVKou);
+					}
+					break;	
+				}
+			}	
 			break;
 		}
 	}

@@ -18,6 +18,9 @@
 		document.getElementById('1').style.display='none';
 		document.getElementById('2').style.display='none';
 		document.getElementById('3').style.display='none';
+		document.getElementById('4').style.display='none';
+		document.getElementById('5').style.display='none';
+		document.getElementById('6').style.display='none';
 		document.getElementById(k).style.display='block';
 		
 	}
@@ -29,16 +32,18 @@
 	<form action="jiuzhen2" method="post">
 	<h5>请选择科室</h5>
 	<input type="radio" name="jiuzhen" value="1" checked="checked" onclick="p1()"/>外科就诊
-	
 	<br>
 	<input type="radio" name="jiuzhen" value="2" onclick="p1()"/>内科就诊
-	
 	<br>
 	<input type="radio" name="jiuzhen" value="3" onclick="p1()"/>儿科就诊
-	
 	<br>
 	<input type="radio" name="jiuzhen" value="4" onclick="p1()"/>眼科就诊
-	
+	<br>
+	<input type="radio" name="jiuzhen" value="5" onclick="p1()"/>换药室就诊
+	<br>
+	<input type="radio" name="jiuzhen" value="6" onclick="p1()"/>放射科就诊
+	<br>
+	<input type="radio" name="jiuzhen" value="7" onclick="p1()"/>口腔科就诊
 	<br>
 	<h5>请选择医生</h5>
 	<div id="0" class="xianshi">
@@ -94,6 +99,30 @@
 			<td><input type="radio" name="Yan" value="VYanA" />专家眼科医生A</td>
 			<td><input type="radio" name="Yan" value="VYanB" />专家眼科医生B</td>
 			<td><input type="radio" name="Yan" value="VYanC" />专家眼科医生C</td>
+		</tr>
+	</table>
+	</div>
+	<div id="4" class="xianshi">
+	<table>
+		<tr>
+			<td><input type="radio" name="Huan" value="PHuanA" checked="checked"/>普通换药护士A</td>
+			<td><input type="radio" name="Huan" value="VHuanA" />专家换药护士A</td>
+		</tr>
+	</table>
+	</div>
+	<div id="5" class="xianshi">
+	<table>
+		<tr>
+			<td><input type="radio" name="Fang" value="PFang" checked="checked"/>普通放射科医生A</td>
+			<td><input type="radio" name="Fang" value="VFang" />专家放射科医生A</td>
+		</tr>
+	</table>
+	</div>
+	<div id="6" class="xianshi">
+	<table>
+		<tr>
+			<td><input type="radio" name="Kou" value="PKou" checked="checked"/>普通口腔医生A</td>
+			<td><input type="radio" name="Kou" value="VKou" />专家口腔医生A</td>
 		</tr>
 	</table>
 	</div>

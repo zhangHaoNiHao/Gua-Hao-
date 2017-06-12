@@ -59,6 +59,12 @@ public class Jiuzhen {
 	public static int num22 = 0;
 	public static int num23 = 0;
 	public static int num24 = 0;
+	public static int num25 = 0;
+	public static int num26 = 0;
+	public static int num27 = 0;	
+	public static int num28 = 0;
+	public static int num29 = 0;
+	public static int num30 = 0;
 	public static Queue<String> queueVWaiA = new LinkedList<String>();
 	public static Queue<String> queueVWaiB = new LinkedList<String>();
 	public static Queue<String> queueVWaiC = new LinkedList<String>();
@@ -83,6 +89,14 @@ public class Jiuzhen {
 	public static Queue<String> queuePYanA = new LinkedList<String>();
 	public static Queue<String> queuePYanB = new LinkedList<String>();
 	public static Queue<String> queuePYanC = new LinkedList<String>();
+	public static Queue<String> queuePKou = new LinkedList<String>();
+	public static Queue<String> queueVKou = new LinkedList<String>();
+	public static Queue<String> queuePFang = new LinkedList<String>();
+	public static Queue<String> queueVFang = new LinkedList<String>();
+	public static Queue<String> queuePHuan = new LinkedList<String>();
+	public static Queue<String> queueVHuan = new LinkedList<String>();
+	
+	
 	public Jiuzhen(){	}
 	
 	//就诊记录，写入文件

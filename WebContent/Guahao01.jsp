@@ -33,16 +33,12 @@
 			document.getElementById('doc21').style.display='none';
 			document.getElementById('doc30').style.display='none';
 			document.getElementById('doc31').style.display='none';
-			document.getElementById('doc40').style.display='none';
 			document.getElementById('doc41').style.display='none';
-			document.getElementById('doc50').style.display='none';
+			document.getElementById('doc40').style.display='none';
 			document.getElementById('doc51').style.display='none';
-			document.getElementById('doc60').style.display='none';
+			document.getElementById('doc50').style.display='none';
 			document.getElementById('doc61').style.display='none';
-			document.getElementById('doc70').style.display='none';
-			document.getElementById('doc71').style.display='none';
-			document.getElementById('doc80').style.display='none';
-			document.getElementById('doc81').style.display='none';
+			document.getElementById('doc60').style.display='none';
 			document.getElementById(d).style.display='block';
 			return d;
 		}
@@ -78,10 +74,20 @@
 			if(ty == 0) ty = "P";
 			else ty = "V";
 			
+			var doc = p1();
+			var doct = document.getElementsByName(""+doc);
+			for(var i = 0;i < doct.length;i++){
+				if(doct[i].checked == true){					
+					doctor = i;
+				}				
+			}
+			if(doctor == 0)   doctor = "A";
+			else if (doctor == 1) doctor = "B"
+			else doctor = "C";
 			//ke = 0外科，1内科，2儿科，3眼科
 			//ty = 0普通号，1专家号
 			
-			var num = ""+y+m+d+ty+ke;
+			var num = ""+y+m+d+ke+ty+doctor;
 			//num = 20170604
 			
 			var numbe = document.getElementById('num');
@@ -100,7 +106,7 @@
 				      }
 				      else{
 				    	  num=Integer.parseInt(application.getAttribute("number").toString());  //获取number属性的值，方便记录
-				    	  if(num > 0 && num <= 9)
+				    	  if(num > 0 && num < 10)
 				    		  num1 = "00"+num;
 				    	  else if(num >= 10 && num <= 99)
 				    		  num1="0"+num;
@@ -119,21 +125,16 @@
 				</tr>
 				
 				<tr>
-					<td>请选择科室：</td>
-				</tr>
-				<tr>
+					<td>请选择就诊科室：</td>
 					<td><input type="radio" value="1" name="keshi" checked="checked" onclick="p1();BingNumber()">外科</td>
 					<td><input type="radio" value="2" name="keshi" onclick="p1();BingNumber()">内科</td>
-					<td><input type="radio" value="3" name="keshi" onclick="p1();BingNumber()">口腔科</td>
-					<td><input type="radio" value="4" name="keshi" onclick="p1();BingNumber()">理疗室</td>
+					<td><input type="radio" value="3" name="keshi" onclick="p1();BingNumber()">儿科</td>
 				</tr>
-				<tr>
-					<td><input type="radio" value="4" name="keshi" onclick="p1();BingNumber()">放射科</td>
-					<td><input type="radio" value="4" name="keshi" onclick="p1();BingNumber()">妇科</td>
-					<td><input type="radio" value="4" name="keshi" onclick="p1();BingNumber()">五官科</td>
-					<td><input type="radio" value="4" name="keshi" onclick="p1();BingNumber()">换药室</td>
-					<td><input type="radio" value="4" name="keshi" onclick="p1();BingNumber()">化验室</td>
-					
+				<tr>	
+					<td><input type="radio" value="4" name="keshi" onclick="p1();BingNumber()">眼科</td>
+					<td><input type="radio" value="5" name="keshi" onclick="p1();BingNumber()">换药室</td>
+					<td><input type="radio" value="6" name="keshi" onclick="p1();BingNumber()">放射科</td>
+					<td><input type="radio" value="7" name="keshi" onclick="p1();BingNumber()">口腔科</td>
 				</tr>
 				<tr>
 					<td>请选择挂号类型</td>
@@ -141,14 +142,20 @@
 					<td><input type="radio" value="vip" name="type" onclick="p1();BingNumber()">专家号</td>
 				</tr>
 				
-				<tr> 
+				<tr>
 					<td>请选择医生</td>
 				</tr>
 				</table>
 				<div id="doc01" >	
 				 <table>
 				   <tr>
-					<td><a href="doctor/vdocWaiA.jsp">专家外科医生A</a></td>
+					<td><input type="radio" value="vdocWaiA" name="doc01" checked="checked"><a href="doctor/vdocWaiA.jsp">专家外科医生A</a></td>
+				   </tr>
+				   <tr>
+					<td><input type="radio" value="vdocWaiB" name="doc01"><a href="doctor/vdocWaiB.jsp">专家外科医生B</a></td>
+					</tr>
+				   <tr>
+					<td><input type="radio" value="vdocWaiC" name="doc01"><a href="doctor/vdocWaiC.jsp">专家外科医生C</a></td>
 				   </tr>
 				  </table>
 				</div>
@@ -156,7 +163,13 @@
 				<div id="doc00">	
 				<table>
 					<tr>
-						<td><a href="doctor/pdocWaiA.jsp">普通外科医生A</a></td>
+						<td><input type="radio" value="pdocWaiA" name="doc00" checked="checked"><a href="doctor/pdocWaiA.jsp">普通外科医生A</a></td>
+					</tr>
+					<tr>
+						<td><input type="radio" value="pdocWaiB" name="doc00"><a href="doctor/pdocWaiB.jsp">普通外科医生B</a></td>
+					</tr>
+					<tr>
+						<td><input type="radio" value="pdocWaiC" name="doc00"><a href="doctor/pdocWaiC.jsp">普通外科医生C</a></td><td></td>
 					</tr>
 				</table>
 				</div>
@@ -164,14 +177,26 @@
 				<div id="doc11" class="doc">	
 				<table>
 					<tr>
-						<td><a href="doctor/vdocNeiA.jsp">专家内科医生A</a></td>
+						<td><input type="radio" value="vdocNeiA" name="doc11" checked="checked"><a href="doctor/vdocNeiA.jsp">专家内科医生A</a></td>
+					</tr>
+					<tr>
+						<td><input type="radio" value="vdocNeiB" name="doc11"><a href="doctor/vdocNeiB.jsp">专家内科医生B</a></td>
+					</tr>
+					<tr>
+						<td><input type="radio" value="vdocNeiC" name="doc11"><a href="doctor/vdocNeiC.jsp">专家内科医生C</a></td><td></td>
 					</tr>
 				</table>
 				</div>
 				<div id="doc10" class="doc">	
 				<table>
 					<tr>
-						<td><a href="doctor/pdocNeiA.jsp">普通内科医生A</a></td>
+						<td><input type="radio" value="pdocNeiA" name="doc10" checked="checked"><a href="doctor/pdocNeiA.jsp">普通内科医生A</a></td>
+					</tr>
+					<tr>
+						<td><input type="radio" value="pdocNeiB" name="doc10"><a href="doctor/pdocNeiB.jsp">普通内科医生B</a></td>
+					</tr>
+					<tr>
+						<td><input type="radio" value="pdocNeiC" name="doc10"><a href="doctor/pdocNeiC.jsp">普通内科医生C</a></td><td></td>
 					</tr>
 				</table>	
 				</div>
@@ -179,14 +204,53 @@
 				<div id="doc21" class="doc">	
 				<table>
 				<tr>
-					<td><a href="doctor/vdocErA.jsp">专家口腔科医生A</a></td>
+					<td><input type="radio" value="vdocErA" name="doc21" checked="checked"><a href="doctor/vdocErA.jsp">专家儿科医生A</a></td>
+				</tr>
+				<tr>
+					<td><input type="radio" value="vdocErB" name="doc21"><a href="doctor/vdocErB.jsp">专家儿科医生B</a></td>
+				</tr>
+				<tr>	
+					<td><input type="radio" value="vdocErC" name="doc21"><a href="doctor/vdocErC.jsp">专家儿科医生C</a></td><td></td>
 				</tr>
 				</table>
 				</div>
 				<div id="doc20" class="doc">	
 				<table>
 				<tr>
-					<td><input type="radio" value="pdocKouA" name="doc20" checked="checked"><a href="doctor/pdocErA.jsp">普通口腔科医生A</a></td>
+					<td><input type="radio" value="pdocErA" name="doc20" checked="checked"><a href="doctor/pdocErA.jsp">普通儿科医生A</a></td>
+				</tr>
+				<tr>
+					<td><input type="radio" value="pdocErB" name="doc20"><a href="doctor/pdocErB.jsp">普通儿科医生B</a></td>
+				</tr>
+				<tr>
+					<td><input type="radio" value="pdocErC" name="doc20"><a href="doctor/pdocErC.jsp">普通儿科医生C</a></td><td></td>
+				</tr>
+				</table>
+				</div>
+				
+				<div id="doc31" class="doc">	
+				<table>
+				<tr>
+					<td><input type="radio" value="vdocYanA" name="doc31" checked="checked"><a href="doctor/vdocYanA.jsp">专家眼科医生A</a></td>
+				</tr>
+				<tr>
+					<td><input type="radio" value="vdocYanB" name="doc31"><a href="doctor/vdocYanB.jsp">专家眼科医生B</a></td>
+				</tr>
+				<tr>
+					<td><input type="radio" value="vdocYanC" name="doc31"><a href="doctor/vdocYanC.jsp">专家眼科医生C</a></td><td></td>
+				</tr>
+				</table>
+				</div>
+				<div id="doc30" class="doc">	
+				<table>
+				<tr>
+					<td><input type="radio" value="pdocYanA" name="doc30" checked="checked"><a href="doctor/pdocYanA.jsp">普通眼科医生A</a></td>
+				</tr>
+				<tr>
+					<td><input type="radio" value="pdocYanB" name="doc30"><a href="doctor/pdocYanB.jsp">普通眼科医生B</a></td>
+				</tr>
+				<tr>
+					<td><input type="radio" value="pdocYanC" name="doc30"><a href="doctor/pdocYanC.jsp">普通眼科医生C</a></td><td></td>
 				</tr>
 				</table>
 				</div>
@@ -194,84 +258,43 @@
 				<div id="doc41" class="doc">	
 				<table>
 				<tr>
-					<td><input type="radio" value="vdocFangA" name="doc41" checked="checked"><a href="doctor/vdocYanA.jsp">专家放射科医生A</a></td>
+					<td><input type="radio" value="vdocHuanA" name="doc41" checked="checked"><a href="doctor/vdocHushi.jsp">专家换药护士A</a></td>
 				</tr>
 				</table>
 				</div>
 				<div id="doc40" class="doc">	
 				<table>
 				<tr>
-					<td><input type="radio" value="pdocFangA" name="doc40" checked="checked"><a href="doctor/pdocYanA.jsp">普通放射科医生A</a></td>
+					<td><input type="radio" value="pdocHuanA" name="doc40" checked="checked"><a href="doctor/pdocHushi.jsp">普通换药护士A</a></td>
 				</tr>
 				</table>
 				</div>
 				<div id="doc51" class="doc">	
 				<table>
 				<tr>
-					<td><input type="radio" value="vdocFuA" name="doc51" checked="checked"><a href="doctor/vdocYanA.jsp">专家妇科医生A</a></td>
+					<td><input type="radio" value="vdocFangA" name="doc51" checked="checked"><a href="doctor/vdocFang.jsp">专家放射科医生A</a></td>
 				</tr>
 				</table>
 				</div>
 				<div id="doc50" class="doc">	
 				<table>
 				<tr>
-					<td><input type="radio" value="pdocFuA" name="doc50" checked="checked"><a href="doctor/pdocYanA.jsp">普通妇科医生A</a></td>
+					<td><input type="radio" value="pdocFangA" name="doc50" checked="checked"><a href="doctor/pdocFang.jsp">普通放射科医生A</a></td>
 				</tr>
 				</table>
 				</div>
+				
 				<div id="doc61" class="doc">	
 				<table>
 				<tr>
-					<td><input type="radio" value="vdocWuA" name="doc61" checked="checked"><a href="doctor/vdocYanA.jsp">专家五官科医生A</a></td>
+					<td><input type="radio" value="vdocKouA" name="doc61" checked="checked"><a href="doctor/vdocKou.jsp">专家口腔医生A</a></td>
 				</tr>
 				</table>
 				</div>
 				<div id="doc60" class="doc">	
 				<table>
 				<tr>
-					<td><input type="radio" value="pdocWuA" name="doc60" checked="checked"><a href="doctor/pdocYanA.jsp">普通五官科医生A</a></td>
-				</tr>
-				</table>
-				</div>
-				<div id="doc71" class="doc">	
-				<table>
-				<tr>
-					<td><input type="radio" value="vdocHuanA" name="doc61" checked="checked"><a href="doctor/vdocYanA.jsp">专家换药医生A</a></td>
-				</tr>
-				</table>
-				</div>
-				<div id="doc70" class="doc">	
-				<table>
-				<tr>
-					<td><input type="radio" value="pdocHuanA" name="doc70" checked="checked"><a href="doctor/pdocYanA.jsp">普通换药医生A</a></td>
-				</tr>
-				</table>
-				</div>
-				<div id="doc81" class="doc">	
-				<table>
-				<tr>
-					<td><input type="radio" value="vdocHuaA" name="doc81" checked="checked"><a href="doctor/vdocYanA.jsp">专家化验医生A</a></td>
-				</tr>
-				</table>
-				</div>
-				<div id="doc80" class="doc">	
-				<table>
-				<tr>
-					<td><input type="radio" value="pdocHuaA" name="doc80" checked="checked"><a href="doctor/pdocYanA.jsp">普通化验医生A</a></td>
-				</tr>
-				</table>
-				</div>
-				<div id="doc31" class="doc">	
-				<table>
-				<tr>
-					<td><input type="radio" value="vdocLiA" name="doc31" checked="checked"><a href="doctor/vdocYanA.jsp">专家理疗医生A</a></td>
-				</tr>
-				</table>
-				</div>
-				<div id="doc30" class="doc">	
-				<table>
-				<tr>
-					<td><input type="radio" value="pdocLiA" name="doc30" checked="checked"><a href="doctor/pdocYanA.jsp">普通理疗医生A</a></td>
+					<td><input type="radio" value="pdocKouA" name="doc60" checked="checked"><a href="doctor/pdocKou.jsp">普通口腔医生A</a></td>
 				</tr>
 				</table>
 				</div>
